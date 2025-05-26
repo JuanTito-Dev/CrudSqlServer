@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Detalle Registro";
+}
+@model Registro;
+
+<h1 class="text-center">Sistema de registro</h1>
+
+<div class="row">
+    <div class="offset-12">
+        <section class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><i class="fa fa-info" aria-hidden="true"></i><strong> Detalle de @Model.Nombres</strong></h3>
+            </div>
+            <div class="card-body bg-secondary-subtle ">
+                <ul class="list-group">
+                    <li class="list-group-item text-primary">Id: <span class="text-black">@Model.Id</span></li>
+                    <li class="list-group-item text-primary">Nombre: <span class="text-black">@Model.Nombres</span> </li>
+                    <li class="list-group-item text-primary">@Html.DisplayNameFor(x => x.ApellidoPaterno): <span class="text-black">@Html.DisplayFor(x => Model.ApellidoPaterno)</span></li>
+                    <li class="list-group-item text-primary">@Html.DisplayNameFor(x => x.ApellidoMaterno): <span class="text-black">@Html.DisplayFor(x => Model.ApellidoMaterno)</span></li>
+                    <li class="list-group-item text-primary">Edad: <span class="text-black">@Model.Edad </span></li>
+                    <li class="list-group-item text-primary">
+                        @Html.DisplayNameFor(x => x.Numero): <span class="text-black">
+                            @Model.Numero
+                            <a class="btn btn-success mr-3" href="https://wa.me/+591@(Model.Numero)"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg> Contactar</a>
+                        </span>
+                    </li>
+                    <li class="list-group-item text-primary">@Html.DisplayNameFor(x => x.FechaNacimiento): <span class="text-black">@Html.DisplayFor(m => m.FechaNacimiento)</span></li>
+                    <li class="list-group-item text-primary">
+                        @Html.DisplayNameFor(x => x.Creacion): <span class="text-black">
+                            @Model.Correo
+                            <a class="btn btn-primary mr-3" href="mailto:@(Model.Correo)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg> Contactar</a>
+                        </span>
+                    </li>
+                    <li class="list-group-item text-primary">Sexo: <span class="text-black">@Model.Sexo</span></li>
+                    <li class="list-group-item text-primary">@Html.DisplayNameFor(x => x.EstadoCivil): <span class="text-black">@Model.EstadoCivil</span></li>
+                    <li class="list-group-item text-primary">Activo: <span class="text-black">@(Model.Activo ? "Si" : "No")</span></li>
+                    <li class="list-group-item text-primary">@Html.DisplayNameFor(x => x.Creacion): <span class="text-black">@Html.DisplayFor(m => m.Creacion)</span></li>
+                </ul> 
+
+                <a asp-action="Index" class="mt-3">Volver</a>
+            </div>
+        </section>
+    </div>
+</div>
